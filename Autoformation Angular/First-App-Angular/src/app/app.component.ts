@@ -1,5 +1,6 @@
 import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { UsersComponent } from './users/users.component';
+import { IndexTaskComponent } from './tasks/index-task/index-task.component';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,8 @@ import { UsersComponent } from './users/users.component';
 export class AppComponent {
   title = 'First-App-Angular';
   @ViewChildren(UsersComponent) cellules!: QueryList<UsersComponent>;
+
+  @ViewChildren(IndexTaskComponent) taskk!: QueryList<IndexTaskComponent>;
 
   @ViewChild(UsersComponent)UsersComponent!:UsersComponent;
   ngAfterViewInit() {
@@ -20,6 +23,7 @@ export class AppComponent {
     console.log(this.cellules.length);
     console.log(this.cellules);
     console.log(this.UsersComponent.pp?.nativeElement.innerHTML);
+    console.log(this.taskk);
   }
   ngOnInit(){
     console.log("hello iman");
