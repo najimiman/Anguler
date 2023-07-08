@@ -1,0 +1,75 @@
+instalation angular:
+-npm install -g @angular/cli
+-ng new my-app
+-cd my-app
+-ng serve
+
+
+instalation bootstrap:
+npm install bootstrap
+add this ligne in :Angular.json
+ "styles": [
+              "src/styles.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+ "scripts": [
+              "./node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "./node_modules/jquery/dist/jquery.slim.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+and this in style.scss
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+--@popperjs/core est une bibliothèque pour positionner des éléments d'interface 
+utilisateur, tandis que jquery.slim.min.js est une bibliothèque pour manipuler 
+le DOM et créer des interactions utilisateur. Ces deux bibliothèques peuvent être utilisées ensemble ou séparément en fonction des besoins de votre application.
+
+instalation material models (disyn)
+template de material https://material.angular.io/components/categories
+
+ng add @angular/material
+yes
+select this: Indigo/Pink
+yes
+Include and enable animations
+
+add this in module:
+import {MatButtonModule} from '@angular/material/button'
+ imports: [
+           BrowserModule,
+           AppRoutingModule,
+-add this  MatButtonModule,
+           BrowserAnimationsModule
+  ],
+other methode:
+in index.html
+<link href="https://cdn.jsdelivr.net/npm/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
+
+
+-compenent
+utilisée pour générer un nouveau composant dans une application Angular et le lier automatiquement au module racine AppModule.
+ng g c my-component --module app.module.ts
+
+
+Voici les principaux hooks du cycle de vie d'un composant Angular :
+
+ngOnChanges : Ce hook est appelé chaque fois que les entrées (@Input) du composant changent.
+
+ngOnInit : Ce hook est appelé une fois, après que le constructeur du composant a été appelé et que toutes les entrées ont été initialisées.
+
+ngDoCheck : Ce hook est appelé à chaque cycle de détection de changement d'Angular.
+
+ngAfterContentInit : Ce hook est appelé une fois après que le contenu du composant a été initialisé.
+
+ngAfterContentChecked : Ce hook est appelé après chaque cycle de détection de changement et après que le contenu du composant a été vérifié.
+
+ngAfterViewInit : Ce hook est appelé une fois après que la vue du composant a été initialisée.
+
+ngAfterViewChecked : Ce hook est appelé après chaque cycle de détection de changement et après que la vue du composant a été vérifiée.
+
+ngOnDestroy : Ce hook est appelé juste avant que le composant ne soit détruit.
+
+défferente entre Ng Template et Ng Container:
+En résumé, "Ng-Template" est utilisé pour définir des templates 
+réutilisables, tandis que "Ng-Container" est utilisé pour créer 
+des conteneurs qui peuvent être utilisés pour regrouper plusieurs éléments dans un seul composant.

@@ -1,0 +1,41 @@
+<p>users works!</p>
+<a href="#" (click)="add();">add</a>
+<!-- <div *ngIf="admin; else notadmin">
+    hello admin
+</div>
+<ng-template #notadmin>
+    not admin
+</ng-template> -->
+
+<ng-container *ngIf="role">
+    <div *ngIf="admin; else notadmin">
+        hello admin
+    </div>
+    <ng-template #notadmin>
+        not admin
+    </ng-template>
+</ng-container>
+<ng-content #cc></ng-content>
+
+<p #pp>test1</p>
+proprety binding
+<br/>
+<img [src]="imgsrc"/>
+<!-- <br/>
+interpolation<img src="{{imgsrc}}"/>
+ 
+<button disabled="{{isdisabled}}">Primary</button>
+<button [disabled]="isdisabled">Accent</button> -->
+<br/>
+<input type="text" (keyup)="onKeyUp($event)">
+{{nom}}
+<!-- two-way bining -->
+<input [(ngModel)]="nom">
+<br/>
+<button (click)="onClick('iman najim')">click</button>
+<br/>
+<ul>
+    <li *ngFor="let user of users; let i=index" > {{ i }} {{user.nom}}</li>
+</ul>
+<br/>
+<h2></h2>

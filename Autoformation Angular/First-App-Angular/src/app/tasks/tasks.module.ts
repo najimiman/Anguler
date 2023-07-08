@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IndexTaskComponent } from './index-task/index-task.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    IndexTaskComponent
+  ],
   imports: [
     CommonModule
   ]
