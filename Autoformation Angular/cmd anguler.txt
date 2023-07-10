@@ -50,6 +50,9 @@ in index.html
 utilisée pour générer un nouveau composant dans une application Angular et le lier automatiquement au module racine AppModule.
 ng g c my-component --module app.module.ts
 
+create component
+ng generate component my-component
+
 
 Voici les principaux hooks du cycle de vie d'un composant Angular :
 
@@ -73,3 +76,20 @@ défferente entre Ng Template et Ng Container:
 En résumé, "Ng-Template" est utilisé pour définir des templates 
 réutilisables, tandis que "Ng-Container" est utilisé pour créer 
 des conteneurs qui peuvent être utilisés pour regrouper plusieurs éléments dans un seul composant.
+
+
+
+Services:
+ng g service usersservice
+
+ng generate service services/my-service --path=src/app  --> this cmd To create a new service in a specific folder in Angular
+
+-Injectable() un mécanisme clé du framework Angular
+@Injectable() permet à Angular de savoir qu'une classe peut être utilisée avec l'injecteur de dépendances
+
+L'injecteur de dépendances permet de gérer ces dépendances en fournissant à chaque classe les instances des autres classes dont elle a besoin pour fonctionner. 
+Plutôt que de créer manuellement chaque instance nécessaire, l'injecteur de dépendances s'en charge de manière automatique, en injectant les dépendances nécessaires 
+dans la classe qui en a besoin.
+
+
+providedIn: 'root'---> pour ne déclaré pas en module principale de app en providers[]
