@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Taches } from '../taches.module';
 
 @Component({
@@ -8,19 +8,56 @@ import { Taches } from '../taches.module';
 })
 export class IndexTaskComponent {
   constructor() { }
+
 taches:Taches[]=[
   {"name": "Task 1", "description": "This is the first task"},
   {"name": "Task 2", "description": "This is the second task"},
   {"name": "Task 3", "description": "This is the third task"}
 ]
+@Output() selectmyrow=new EventEmitter<Taches>();
 
 displayedColumns: string[] = ['name', 'description','add'];
 dataSource = this.taches;
 clickedRows = new Set<Taches>();
+selectedRowIndex: number = -1;//aucune ligne n'est sélectionnée dans la table au départ
+selectedRow: any;//any représente n'importe quel type de données
+
+// name!:string
+// description!:string
+
+name:string="";
+description:string="";
+
 ngOnInit(): void {
-  //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-  //Add 'implements OnInit' to the class.
-  console.log("mmm",this.taches);
+  console.log("taches",this.taches);
 }
 
+
+  onSelectItem(index: number){
+    this.selectedRowIndex = index;
+    this.selectedRow = this.taches[index];
+    console.log("aa",this.selectedRow);
+  }
+  // onKeyUp(event: any) {
+  //   this.name = event.target.value;
+  //   this.description = event.target.value;
+  // }
+  onKeyUp(event: any, field: string) {
+    if (field === 'name') {
+      this.name = event.target.value;
+    } else if (field === 'description') {
+      this.description = event.target.value;
+    }
+  }
+
+  Addtask(){
+    if(this.name.valueOf()!="" && this.description.valueOf()!=""){
+    this.taches.push({name:this.name,description:this.description})
+  }
+  else{
+    alert("remplir formulaire");
+  }
+    // this.name = '';
+    // this.description=''
+  }
 }
