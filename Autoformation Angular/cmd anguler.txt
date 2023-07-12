@@ -93,3 +93,24 @@ dans la classe qui en a besoin.
 
 
 providedIn: 'root'---> pour ne déclaré pas en module principale de app en providers[]
+
+
+.subscribe comme then in react js
+
+Observable Subscribe
+
+-HTTP Interceptor:
+
+Les intercepteurs peuvent être utilisés pour ajouter des en-têtes à toutes les requêtes, pour ajouter des informations d'authentification, 
+pour gérer les erreurs, etc.
+
+
+
+
+
+
+
+
+https://www.youtube.com/watch?v=2LCQCDDnVsw&pp=ygUkT2JzZXJ2YWJsZSBTdWJzY3JpYmUgIGFuZ3VsYXIgYXJhYmlj
+
+https://www.youtube.com/watch?v=i0jHgkoro1A&pp=ygUkT2JzZXJ2YWJsZSBTdWJzY3JpYmUgIGFuZ3VsYXIgYXJhYmlj

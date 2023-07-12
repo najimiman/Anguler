@@ -6,25 +6,25 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UsersServiceService {
+  // private otherservice:OtherserviceService
+  constructor(private http:HttpClient) { }
+   
+ addUser(body:any){
+  
+  return this.http.post('https://jsonplaceholder.typicode.com/posts',body)
+ }
 
-  constructor(private otherservice:OtherserviceService,private http:HttpClient) { }
-  // users=[
-  //   {
-  //     "id": 1,
-  //     "nom": "John",
-  //     "age": 25
-  //   },
-  //   {
-  //     "id": 2,
-  //     "nom": "Jane",
-  //     "age": 30
-  //   },
-  //   {
-  //     "id": 3,
-  //     "nom": "Bob",
-  //     "age": 40
-  //   }
-  // ]
+ deleteuer(id:number){
+  return this.http.delete(`https://jsonplaceholder.typicode.com/posts/${id}`)
+ }
+ updateUser(user:any) {
+  // const putBody = {
+  //   name: 'iman',
+  //   email: 'dd',
+  //   userId: 1
+  // };
+  return this.http.put(`https://jsonplaceholder.typicode.com/users/${user.id}`, user);
+}
 
   getUsers(){
     const headers=new HttpHeaders({
@@ -36,4 +36,5 @@ export class UsersServiceService {
     return this.http.get('https://jsonplaceholder.typicode.com/users',{headers:headers});
   
   }
+  
 }

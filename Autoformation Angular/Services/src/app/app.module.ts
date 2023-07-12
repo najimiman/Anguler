@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { UsersServiceService } from './service/users-service.service';
 import { UsersComponent } from './users/users.component';
 import { OtherserviceService } from './otherservice.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import {FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonInterceptor } from './common.interceptor';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 
 
@@ -25,7 +27,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    {provide:LocationStrategy,useClass:PathLocationStrategy},
+    // {provide:HTTP_INTERCEPTORS,useClass:CommonInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

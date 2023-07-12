@@ -10,13 +10,39 @@
 
 
 <h1>hello</h1>
-<form #addCustomerFrom="ngForm" (submit)="addform(addCustomerFrom)">
-  <input type="text" [(ngModel)]="name">
+<form #addCustomerFrom="ngForm" (submit)="saveUser()">
+  <input type="text" [(ngModel)]="myuser.name" name="name">
+  <br/>
+  <input type="text" [(ngModel)]="myuser.email" name="email">
+  <br/>
+  <button type="submit" *ngIf="!edituserform">add</button>
+  <button type="submit" *ngIf="edituserform">update</button>
 </form>
 
-<ul *ngFor="let item of listuser">
+
+<!-- <ul *ngFor="let item of listuser">
   <li>{{item.name}}</li>
-</ul>
+</ul> -->
+
+<table>
+  <thead>
+    <th>id</th>
+    <th>Name</th>
+    <th>email</th>
+    <th>delete</th>
+  </thead>
+  <tbody>
+    <!-- (click)="onSelectItem(item.id)" -->
+    <tr  *ngFor="let item of listuser;" [class.selected]="item.id === selectindexrow" >
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.email}}</td>
+      <td><button mat-raised-button color="warn" (click)="DeleteUser(item.id)">Delete</button></td>
+      <td><button mat-raised-button color="warn" (click)="editUser(item)">Update</button></td>
+    </tr>
+  </tbody>
+</table>
+
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
