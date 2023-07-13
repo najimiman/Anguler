@@ -124,9 +124,16 @@ JSON
 Routing:
 -** this for page not found
 
+-ng g module nomlazy --route nomlazy --module app.module  --> this cmd for create lazy louding
 
-
-
+-Generate Route Guard  --> this for les roules
+-->ng g guard <guard_name>  exemple --> ng g guard auth
+-Route Guards have something called "interfaces"
+*canActivate -> can a user access a route
+*canActivateChild -> can user access child routes of a parent route
+*canDecativate -> check if user can exit the route
+*canLoad -> Can a lazy loaded module be loaded
+*resolve -> route data retrival before route activating
 
 
 
