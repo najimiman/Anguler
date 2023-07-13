@@ -1,0 +1,18 @@
+<p>form1 works!</p>
+<form #addtaskForm="ngForm" (submit)="submitform(addtaskForm)">
+    <input type="text" name="name" required [(ngModel)]="myform.name">
+    <br>
+    <input type="text" name="description" [(ngModel)]="myform.description">
+    <br>
+    <input type="checkbox" name="check" [(ngModel)]="myform.check">
+    <br>
+    <select name="selectville" [(ngModel)]="myform.selectville">
+        <option value="tanger">tanger</option>
+        <option value="fes">fes</option>
+        <option value="agadir">agadir</option>
+    </select>
+    <br>
+    <button type="submit" [disabled]="!addtaskForm.valid">add</button>
+    <button type="submit" (click)="resetForm(addtaskForm)">vide</button>
+    <button type="submit" (click)="loadvalue(addtaskForm)">set value</button>
+</form>

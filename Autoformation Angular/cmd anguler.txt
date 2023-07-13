@@ -135,6 +135,15 @@ Routing:
 *canLoad -> Can a lazy loaded module be loaded
 *resolve -> route data retrival before route activating
 
+-Reactive Forms -> FormGroup, FormControl 
+
+Angular maintains the state information of forms at all times
+ng-touched
+ng-untouched
+ng-dirty
+ng-pristine
+ng-valid
+ng-invalid
 
 
 https://www.youtube.com/watch?v=2LCQCDDnVsw&pp=ygUkT2JzZXJ2YWJsZSBTdWJzY3JpYmUgIGFuZ3VsYXIgYXJhYmlj

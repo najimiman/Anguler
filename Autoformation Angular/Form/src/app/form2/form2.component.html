@@ -1,0 +1,15 @@
+<p>form2 works!</p>
+
+<form [formGroup]="addLoadform">
+    <input type="text" formControlName="name">
+    <span *ngIf="addLoadform.get('name')?.hasError('required') && addLoadform.get('name')?.touched" [ngStyle]="{color:'red'}">
+        Please enter a name.
+      </span>
+      <span *ngIf="addLoadform.get('name')?.hasError('maxlength') && addLoadform.get('name')?.touched" [ngStyle]="{color:'red'}">
+        maxLength name is 4
+      </span>
+    <br>
+    <input type="text" formControlName="description">
+    <br>
+    <button type="submit" (click)="addloadType()"  [disabled]="!addLoadform.valid">add Load type</button>
+</form>
