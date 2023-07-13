@@ -3,14 +3,15 @@
 <form class="example-form">
     <mat-form-field class="example-full-width">
       <mat-label>Name</mat-label>
-      <input matInput placeholder="Write Name" (keyup)="onKeyUp($event,'name')" #n>
+      <input matInput placeholder="Write Name" [(ngModel)]="name" name="name">
     </mat-form-field>
   
     <mat-form-field class="example-full-width">
       <mat-label>Description</mat-label>
-      <textarea matInput placeholder="Write Description" (keyup)="onKeyUp($event,'description')" #d></textarea>
+      <textarea matInput placeholder="Write Description" [(ngModel)]="description" name="description"></textarea>
     </mat-form-field>
     <button mat-raised-button color="primary" (click)="Addtask()">Add</button>
+    <button mat-raised-button color="primary" (click)="Updatetask(name,description)">UpdateTask</button>
   </form>
   <br/>
   
@@ -72,7 +73,7 @@
       <tr  *ngFor="let tache of taches; let i = index" [class.selected]="i === selectedRowIndex" (click)="onSelectItem(i)">
         <td>{{tache.name}}</td>
         <td>{{tache.description}}</td>
-        <td><button mat-raised-button color="warn" onclick="Deletetask()">Delete</button></td>
+        <td><button mat-raised-button color="warn" (click)="Deletetask(i)">Delete</button></td>
       </tr>
     </tbody>
   </table>

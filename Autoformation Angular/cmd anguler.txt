@@ -105,6 +105,25 @@ Les intercepteurs peuvent être utilisés pour ajouter des en-têtes à toutes l
 pour gérer les erreurs, etc.
 
 
+Syntax ngFor:
+ <div *ngFor="let ele of collection"> </div>
+Provides local variables in the array data
+Index – gets the current index of the current element in iteration
+First returns true if the current element is the first element in iteration
+Last - returns true if the current element is the last element in iteration
+Even - returns true if the current element is the even element in iteration
+Odd - returns true if the current element is the odd element in iteration
+
+-Built-In Pipes
+Lowercase
+Uppercase
+Percent
+Currency
+Date
+JSON
+Routing:
+-** this for page not found
+
 
 
 

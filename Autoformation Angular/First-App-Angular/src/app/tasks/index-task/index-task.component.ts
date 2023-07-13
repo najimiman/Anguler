@@ -37,18 +37,14 @@ ngOnInit(): void {
     this.selectedRowIndex = index;
     this.selectedRow = this.taches[index];
     console.log("aa",this.selectedRow);
+    this.name=this.selectedRow.name
+    this.description=this.selectedRow.description
   }
   // onKeyUp(event: any) {
   //   this.name = event.target.value;
   //   this.description = event.target.value;
   // }
-  onKeyUp(event: any, field: string) {
-    if (field === 'name') {
-      this.name = event.target.value;
-    } else if (field === 'description') {
-      this.description = event.target.value;
-    }
-  }
+
 
   Addtask(){
     if(this.name.valueOf()!="" && this.description.valueOf()!=""){
@@ -59,5 +55,11 @@ ngOnInit(): void {
   }
     // this.name = '';
     // this.description=''
+  }
+  Deletetask(index:number){
+    this.taches.splice(index)
+  }
+  Updatetask(name:string,description:string){
+    this.taches[this.selectedRowIndex] = {name,description};
   }
 }
