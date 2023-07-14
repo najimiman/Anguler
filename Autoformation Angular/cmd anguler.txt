@@ -153,6 +153,3 @@ subscribe() is used to listen to the values emitted by the observable, toPromise
 
 
 
-https://www.youtube.com/watch?v=2LCQCDDnVsw&pp=ygUkT2JzZXJ2YWJsZSBTdWJzY3JpYmUgIGFuZ3VsYXIgYXJhYmlj
-
-https://www.youtube.com/watch?v=i0jHgkoro1A&pp=ygUkT2JzZXJ2YWJsZSBTdWJzY3JpYmUgIGFuZ3VsYXIgYXJhYmlj
