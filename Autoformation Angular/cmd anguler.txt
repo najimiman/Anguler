@@ -146,6 +146,13 @@ ng-valid
 ng-invalid
 
 
+RxJS (Reactive Extensions for JavaScript)
+RxJS est une bibliothèque JavaScript qui fournit des outils pour gérer les événements asynchrones dans une application.
+
+subscribe() is used to listen to the values emitted by the observable, toPromise() is used to transform the observable into a promise, and pipe() is used to transform the data emitted by the observable using RxJS operators.
+
+
+
 https://www.youtube.com/watch?v=2LCQCDDnVsw&pp=ygUkT2JzZXJ2YWJsZSBTdWJzY3JpYmUgIGFuZ3VsYXIgYXJhYmlj
 
 https://www.youtube.com/watch?v=i0jHgkoro1A&pp=ygUkT2JzZXJ2YWJsZSBTdWJzY3JpYmUgIGFuZ3VsYXIgYXJhYmlj

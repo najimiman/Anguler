@@ -1,0 +1,9 @@
+<p>view-users works!</p>
+{{userStatus}}
+
+<ul *ngFor="let item of listusers$">
+<li>{{item.name}}</li>
+</ul>
+
+<h4>détails user</h4>
+<p>{{details|json}}</p>
